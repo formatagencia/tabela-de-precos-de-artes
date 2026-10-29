@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tabela de serviços e valores da Format Agência.">
+  <title>Format Agência — Tabela de serviços</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero wrap">
+    <p class="eyebrow">Format Agência</p>
+    <h1>Tabela de serviços</h1>
+    <p class="lead">Consulte os formatos e encontre a opção para o seu projeto.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="packages" aria-labelledby="pacotes-title">
+      <div class="section-head"><div><p class="kicker">Redes sociais</p><h2 id="pacotes-title">Pacotes de criação</h2></div><p>Valores finais por pacote, com economia progressiva.</p></div>
+      <div class="package-tabs" role="tablist" aria-label="Formato do pacote">
+        <button class="tab active" role="tab" aria-selected="true" data-package="Feed">Feed</button>
+        <button class="tab" role="tab" aria-selected="false" data-package="Story">Story</button>
+        <button class="tab" role="tab" aria-selected="false" data-package="Feed + story">Feed + story</button>
+      </div>
+      <p id="package-note" class="package-note" hidden>Mesma criação adaptada aos formatos feed e story.</p>
+      <div id="package-grid" class="package-grid"></div>
+    </section>
+
+    <section class="calculator" aria-labelledby="calc-title">
+      <div class="calc-copy"><p class="kicker">Carrossel</p><h2 id="calc-title">Calcule o valor</h2><p>A capa vale o mesmo que uma arte normal na faixa escolhida. Cada slide adicional custa R$ 30.</p></div>
+      <form id="carousel-form" class="calc-form">
+        <label>Faixa da arte<select id="carousel-tier"><option value="70">Avulso — R$ 70 por arte</option><option value="65">Pacote de 4 — R$ 65 por arte</option><option value="60">Pacote de 8 — R$ 60 por arte</option><option value="55">Pacote de 16 — R$ 55 por arte</option></select></label>
+        <label>Total de slides <span>(incluindo a capa)</span><input id="slide-count" type="number" min="1" step="1" value="3" inputmode="numeric"></label>
+        <output id="carousel-result" aria-live="polite"></output>
+        <p class="calc-caption">Simulação de um carrossel dentro da faixa selecionada — não representa o preço do pacote inteiro.</p>
+      </form>
+    </section>
+
+    <section class="catalog" aria-labelledby="catalog-title">
+      <div class="section-head"><div><p class="kicker">Todos os serviços</p><h2 id="catalog-title">Encontre o que precisa</h2></div><p id="result-count" aria-live="polite"></p></div>
+      <div class="toolbar">
+        <label class="search"><span>Buscar serviço</span><input id="search" type="search" placeholder="Ex.: cartão, banner, catálogo" autocomplete="off"></label>
+        <div><span class="filter-label">Categoria</span><div id="filters" class="filters" role="group" aria-label="Filtrar por categoria"></div></div>
+        <button id="clear" class="clear" type="button">Limpar busca e filtros</button>
+      </div>
+      <div id="services"></div>
+      <div id="empty" class="empty" hidden><h3>Nenhum serviço encontrado</h3><p>Tente outro termo ou limpe os filtros para ver todas as opções.</p></div>
+    </section>
+
+  </main>
+  <footer class="wrap"><span>Format Agência</span><span>Tabela de serviços</span></footer>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>
